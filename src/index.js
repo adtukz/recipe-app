@@ -7,10 +7,6 @@ import About from "./components/About.js";
 import recipeLogo from "./images/recipeLogo.png";
 
 class Index extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <BrowserRouter>
@@ -18,7 +14,7 @@ class Index extends React.Component {
           <nav className="navbar" role="navigation">
             <div className="navbar-brand">
             <Link to="/About">
-              <img src={recipeLogo} className="navbar-image"/>
+              <img src={recipeLogo} alt="" className="navbar-image"/>
             </Link>
             </div>
             <div className="navbar-menu">

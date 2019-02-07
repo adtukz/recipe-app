@@ -66,7 +66,6 @@ class App extends React.Component {
       for(let i = 0; i < diet.length; i++) {
         dietString = dietString + "&diet=" + diet[i];
       }
-      console.log(dietString);
       axios
         .get(
           `https://api.edamam.com/search?q=${ingredient}${dietString}&app_id=2d4a708f&app_key=5519d3b7c9291019417c80cffaf82880&from=0&to=50`

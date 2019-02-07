@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
-import ReactDOM from "react-dom";
-import axios from "axios"
+import React from 'react';
 import RecipeCard from './RecipeCard';
-import App from './App.js';
 
 class Recipes extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const recipeList = this.props.recipes.map((r, i) => (
       <RecipeCard

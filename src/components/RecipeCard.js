@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-import axios from "axios";
-import { Route, Link } from "react-router-dom";
 
 class RecipeCard extends React.Component {
   constructor(props) {
@@ -26,7 +23,7 @@ class RecipeCard extends React.Component {
 
   render() {
     const currentRecipe = this.props.currentRecipe;
-    if(this.state.fullRecipe === false){
+    if(!this.state.fullRecipe){
       return (
         <div className="column is-4">
           <div className="recipe">
@@ -49,9 +46,9 @@ class RecipeCard extends React.Component {
           </div>
         </div>
       );
-    } else if (this.state.fullRecipe === true) {
+    } else if (this.state.fullRecipe) {
       return (
-        <div className="column is-12 recipe">
+        <div className="column is-8 recipe">
           <div className="columns">
 
             <span onClick={this.handleClick}>
@@ -67,9 +64,9 @@ class RecipeCard extends React.Component {
                       <h2> Ingredients: </h2>
                         <p className="subtitle calStyle">{currentRecipe.recipe.ingredientLines.map(txt => <p>{txt}</p>)}</p>
                       <h2> Diet Labels: </h2>
-                      <p className="subtitle calStyle">{currentRecipe.recipe.dietLabels}</p>
+                      <p className="subtitle calStyle">{currentRecipe.recipe.dietLabels.map(txt => <p>{txt}</p>)}</p>
                       <h2> Health Labels: </h2>
-                      <p className="subtitle calStyle">{currentRecipe.recipe.healthLabels}</p>
+                      <p className="subtitle calStyle">{currentRecipe.recipe.healthLabels.map(txt => <p>{txt}</p>)}</p>
                       <h2> Link to full recipe: </h2>
                       <a href={currentRecipe.recipe.uri}>{currentRecipe.recipe.url}</a>
                   </div>

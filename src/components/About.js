@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css"
-import axios from "axios";
 
 class About extends React.Component {
   render() {
