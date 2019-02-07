@@ -36,19 +36,19 @@ class App extends React.Component {
     let diet = [];
     let dietString = "";
 
-    if(this.state.balanced === true) {
+    if(this.state.balanced) {
       diet.push("balanced");
     }
-    if(this.state.highProtein === true) {
+    if(this.state.highProtein) {
       diet.push("high-protein");
     }
-    if(this.state.lowFat === true) {
+    if(this.state.lowFat) {
       diet.push("low-fat");
     }
-    if(this.state.lowCarb === true) {
+    if(this.state.lowCarb) {
       diet.push("low-carb");
     }
-    if(this.state.lowSodium === true) {
+    if(this.state.lowSodium) {
       diet.push("low-sodium");
     }
     if(diet.length < 1) {

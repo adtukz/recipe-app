@@ -10,7 +10,7 @@ class RecipeCard extends React.Component {
   }
 
   handleClick(event) {
-    if(this.state.fullRecipe === false) {
+    if(!this.state.fullRecipe) {
       this.setState({
         fullRecipe: true
       });
