@@ -8,7 +8,6 @@ class App extends React.Component {
     this.state = {
       search: "",
       recipes: [],
-      searchType: "Name",
       balanced: false,
       highProtein: false,
       lowFat: false,
@@ -124,7 +123,6 @@ class App extends React.Component {
                   <input
                   name="balanced"
                   type="checkbox"
-                  value={this.state.searchType}
                   onChange={this.handleButtons}
                   />
                   </p>
@@ -135,7 +133,6 @@ class App extends React.Component {
                   <input
                   name="highProtein"
                   type="checkbox"
-                  value={this.state.searchType}
                   onChange={this.handleButtons}
                   />
                   </p>
@@ -146,7 +143,6 @@ class App extends React.Component {
                   <input
                   name="lowFat"
                   type="checkbox"
-                  value={this.state.searchType}
                   onChange={this.handleButtons}
                   />
                   </p>
@@ -157,7 +153,6 @@ class App extends React.Component {
                   <input
                   name="lowCarb"
                   type="checkbox"
-                  value={this.state.searchType}
                   onChange={this.handleButtons}
                   />
                   </p>
@@ -168,7 +163,6 @@ class App extends React.Component {
                   <input
                   name="lowSodium"
                   type="checkbox"
-                  value={this.state.searchType}
                   onChange={this.handleButtons}
                   />
                   </p>
