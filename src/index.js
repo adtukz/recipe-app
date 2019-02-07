@@ -1,16 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, Link, BrowserRouter } from "react-router-dom";
 import './index.css';
-import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './components/App.js';
+import About from "./components/About.js";
+import recipeLogo from "./images/recipeLogo.png";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+class Index extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <nav className="navbar" role="navigation">
+            <div className="navbar-brand">
+            <Link to="/About">
+              <img src={recipeLogo} className="navbar-image"/>
+            </Link>
+            </div>
+            <div className="navbar-menu">
+              <Link to="/About/" className="navbar-item">
+                About
+              </Link>
+              <Link to="/" className="navbar-item">
+                Home
+              </Link>
+            </div>
+          </nav>
+          <Route path="/About/" component={About} />
+          <Route exact path="/" component={App} />
+        </div>
+      </BrowserRouter>
+    );
+  }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+
+ReactDOM.render(<Index />, document.getElementById('root'));
